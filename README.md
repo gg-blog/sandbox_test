@@ -2,4 +2,4 @@
 
 - sand.py: code
 - Sysmon64.exe: sysmon
-- sysmonconfig.yml: config
+- sysmonconfig.xml: config
