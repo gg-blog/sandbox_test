@@ -15,7 +15,7 @@ copy %USERPROFILE%\\Desktop\\SandboxFiles\\sysmonconfig.xml .
 
 whoami
 
-xcopy
+xcopy %USERPROFILE%\\Desktop\\SandboxFiles\\Sysmon64.exe .
 
 reg save
 
