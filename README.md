@@ -9,7 +9,7 @@
 ##### payload record:
 ##### SCHTASKS (powershell only)
 ```
-$time = [DateTime]::Now.AddMinutes(30)
+$time = [DateTime]::Now.AddMinutes(1)
 
 $hourMinute = $time.ToString("HH:mm")
 
