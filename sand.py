@@ -21,8 +21,7 @@ cd %USERPROFILE%\\Desktop
 copy %USERPROFILE%\\Desktop\\SandboxFiles\\Sysmon64.exe .
 copy %USERPROFILE%\\Desktop\\SandboxFiles\\sysmonconfig.xml .
 Sysmon64.exe -accepteula -i sysmonconfig.xml
-ping 8.8.8.8
-timeout /t 30
+timeout /t 10
 echo ^<?xml version="1.0" encoding="utf-8" standalone="yes"?^> > %USERPROFILE%\\Desktop\\SandboxFiles\\log.xml
 wevtutil qe Microsoft-Windows-Sysmon/Operational /f:xml /e:root > %USERPROFILE%\\Desktop\\SandboxFiles\\temp.xml
 type %USERPROFILE%\\Desktop\\SandboxFiles\\temp.xml >> %USERPROFILE%\\Desktop\\SandboxFiles\\log.xml
