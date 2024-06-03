@@ -424,6 +424,14 @@
 	<RuleGroup name="" groupRelation="or">
 		<ImageLoad onmatch="include">
 			<!--NOTE: Using "include" with no rules means nothing in this section will be logged-->
+			<ImageLoaded condition="contains">cryptdll.dll</ImageLoaded>
+			<ImageLoaded condition="contains">hid.dll</ImageLoaded>
+			<ImageLoaded condition="contains">winscard.dll</ImageLoaded>
+			<ImageLoaded condition="contains">logoncli.dll</ImageLoaded>
+			<ImageLoaded condition="contains">netapi32.dll</ImageLoaded>
+			<ImageLoaded condition="contains">samlib.dll</ImageLoaded>
+			<ImageLoaded condition="contains">vaultcli.dll</ImageLoaded>
+			<ImageLoaded condition="contains">wintrust.dll</ImageLoaded>
 		</ImageLoad>
 	</RuleGroup>
 
