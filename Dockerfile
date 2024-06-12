@@ -14,4 +14,4 @@ RUN echo 'Defaults logfile="/var/log/sudo.log"' >> /etc/sudoers
 
 
 # Start rsyslog and atd
-CMD service atd start && sudo systemctl start syslog-ng && sudo systemctl enable syslog-ng
+CMD service atd start && service syslog-ng start && tail -f /dev/null
