@@ -6,16 +6,19 @@ client = docker.from_env()
 
 # Define the syslog address
 test_command=["whoami",
-                "echo 'whoami'> tmp",
-                "cp tmp tmp2",
-                "sh < tmp2"]
+            "echo 'whoami'> tmp",
+            "cp tmp tmp2",
+            "sh < tmp2",
+            "cat /etc/shadow",
+            "echo \"echo hash_value > name.out\" | at now + 1 minute",
+            "echo \"samuel0308\" | sudo sh -c 'echo \"*/2 * * * * root /mnt/c/Users/samuel/Documents/softetst/sandbox_test/np_shell\" >> /etc/crontab'"]
+container_name="logging-container"
 # Create and start a new container with syslog logging
-image, build_logs = client.images.build(path=".", tag="slpine-syslog")
+image, build_logs = client.images.build(path=".", tag=container_name)
 for log in build_logs:
     if 'stream' in log:
         print(log['stream'], end='')
 
-container_name="slpine-syslog"
 try:
     existing_container = client.containers.get(container_name)
     print(f"Container {container_name} already exists. Removing it.")
@@ -24,17 +27,19 @@ except docker.errors.NotFound:
     print(f"No existing container with name {container_name}.")
 
 container = client.containers.run(
-    container_name,
-    detach=True,
-    name=container_name
+    image="logging-container",  # Specify the image name
+    name="logging-container",   # Specify the container name
+    privileged=True,            # Run in privileged mode
+    detach=True                 # Run the container in detached mode
 )
 time.sleep(10)
-#for line in test_command:
-#    exit_code, output = container.exec_run(line)
-#    if exit_code == 0:
-#        print(output)  
+for line in test_command:
+    shell_cmd = f"/bin/sh -c '{line}'"
+    exit_code, output = container.exec_run(shell_cmd)
+    if exit_code == 0:
+        print(output.decode())  
 exit_code, output = container.exec_run("ls /var/log ")
-print(output) 
+print(output.decode()) 
 #exit_code, output = container.exec_run("cat /var/log/syslog")
 #if exit_code == 0:
 #    print(output.decode())
