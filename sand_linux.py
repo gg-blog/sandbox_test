@@ -11,7 +11,8 @@ test_command=["whoami",
             "sh < tmp2",
             "cat /etc/shadow",
             "echo \"echo hash_value > name.out\" | at now + 1 minute",
-            "echo \"samuel0308\" | sudo sh -c 'echo \"*/2 * * * * root /mnt/c/Users/samuel/Documents/softetst/sandbox_test/np_shell\" >> /etc/crontab'"]
+            "echo \"*/2 * * * * root whoami > username\" >> /etc/crontab",
+            "echo \"whoami > root_name\" | crontab"]
 container_name="logging-container"
 # Create and start a new container with syslog logging
 image, build_logs = client.images.build(path=".", tag=container_name)

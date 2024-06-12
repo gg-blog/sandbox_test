@@ -14,4 +14,4 @@ RUN echo 'Defaults logfile="/var/log/sudo.log"' >> /etc/sudoers
 
 
 # Start rsyslog and atd
-CMD service atd start && service syslog-ng start && tail -f /dev/null
+CMD service atd start && service syslog-ng start && service cron start && tail -f /dev/null 
