@@ -1,6 +1,7 @@
 # sandbox_test
 
 只需要下載src和test資料夾即可，project環境為windows 10 22H2 pro，需要開啟windows sandbox功能和docker
+
 (如果要看log，可以下載log.xml和container_syslog.log)
 
 ## 執行code
