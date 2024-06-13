@@ -75,6 +75,9 @@ echo \"*/2 * * * * root whoami > username\" >> /etc/crontab
 ```
 
 ## 有關log
+
 log.xml是windows的log
+
 container_syslog.log是linux的log
+
 另外，執行code後，log的位置分別是```root/src/SandboxFiles/log.xml```和```root/src/container_syslog.log```
