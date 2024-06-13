@@ -1,0 +1,11 @@
+Jun 13 02:55:00 c24feef20403 atd[81]: pam_unix(atd:session): session opened for user root by (uid=1)
+Jun 13 02:55:00 c24feef20403 atd[81]: pam_unix(atd:session): session closed for user root
+Jun 13 02:56:01 c24feef20403 CRON[84]: pam_env(cron:session): Unable to open env file: /etc/default/locale: No such file or directory
+Jun 13 02:56:01 c24feef20403 CRON[84]: pam_unix(cron:session): session opened for user root by (uid=0)
+Jun 13 02:56:01 c24feef20403 CRON[84]: pam_unix(cron:session): session closed for user root
+
+Jun 13 02:53:42 c24feef20403 cron[31]: (CRON) INFO (pidfile fd = 3)
+Jun 13 02:53:42 c24feef20403 cron[32]: (CRON) STARTUP (fork ok)
+Jun 13 02:53:42 c24feef20403 cron[32]: (CRON) INFO (Running @reboot jobs)
+Jun 13 02:55:01 c24feef20403 cron[32]: (*system*) RELOAD (/etc/crontab)
+Jun 13 02:56:01 c24feef20403 CRON[86]: (root) CMD (whoami > username)
